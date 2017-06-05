@@ -15,7 +15,7 @@ import redis
 import requests as req
 reload(sys)
 sys.setdefaultencoding("utf-8")
-TOKEN = 'Token'
+TOKEN = '315860669:AAF1Mb_DgVEgh8pWE3Tk1wIP5O3vfOI6LTc'
 bot = telebot.TeleBot(TOKEN)
 redis = redis.StrictRedis(host='localhost', port=6379, db=0)
 db = "https://api.telegram.org/bot{}/getMe?".format(TOKEN)
@@ -28,15 +28,15 @@ print(f + u + i + c)
 
 @bot.message_handler(commands=['start'])
 def start(m):
-    if m.from_user.id == 123456789 :
+    if m.from_user.id == 365910979 :
      markup = types.InlineKeyboardMarkup()
-     c = types.InlineKeyboardButton("@kiavair",callback_data='amar')
+     c = types.InlineKeyboardButton("@alit7005",callback_data='amar')
      markup.add(c)
      bot.send_message(m.chat.id, "سلام ادمین خوش اومدید برای دیدن امار ربات دستور /panel رو ارسال کنید و برای فرواد متن از /fwdall", reply_markup=markup, parse_mode='Markdown')
 	 
 @bot.message_handler(commands=['panel'])
 def panel(m):
-    if m.from_user.id == 123456789 :
+    if m.from_user.id == 365910979 :
      markup = types.InlineKeyboardMarkup()
      c = types.InlineKeyboardButton("امار🌟",callback_data='amar')
      markup.add(c)
@@ -44,7 +44,7 @@ def panel(m):
 
 @bot.message_handler(commands=['fwdall'])
 def fwdall(m):
-    if m.from_user.id == 123456789 :
+    if m.from_user.id == 365910979 :
         if m.reply_to_message:
             mid = m.reply_to_message.message_id
             ids = redis.smembers('alls')
@@ -56,7 +56,7 @@ def fwdall(m):
 		
 @bot.message_handler(commands=['bc'])
 def clac(m):
-    if m.from_user.id == 123456789 :
+    if m.from_user.id == 365910979 :
         text = m.text.replace("/bc ","")
         rd = redis.smembers('alls')
         for id in rd:
